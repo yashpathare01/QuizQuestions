@@ -1,0 +1,38 @@
+package com.yash.entities;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.NoArgsConstructor;
+
+@Entity
+@NoArgsConstructor
+public class Questions 
+{
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long qid;
+	private String ques;
+	private long quizid;
+	
+	
+	public long getQid() {
+		return qid;
+	}
+	public void setQid(long qid) {
+		this.qid = qid;
+	}
+	public String getQues() {
+		return ques;
+	}
+	public void setQues(String ques) {
+		this.ques = ques;
+	}
+	public long getQuizid() {
+		return quizid;
+	}
+	public void setQuizid(long quizid) {
+		this.quizid = quizid;
+	}
+}

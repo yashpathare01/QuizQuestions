@@ -1,0 +1,16 @@
+package com.yash.service;
+
+import java.util.List;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.yash.entities.Questions;
+
+@FeignClient(name = "QUESTIONS-SERVER")
+public interface QuestionsClient 
+{
+	@GetMapping("/questions/quiz/{quizId}")
+	List<Questions> getQuesByquizId(@PathVariable long quizId);
+}

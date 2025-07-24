@@ -1,0 +1,8 @@
+package com.yash.service;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(url = "http://localhost:8082", value = "Questions-Client")
+public interface QuestionsClient {
+
+}
